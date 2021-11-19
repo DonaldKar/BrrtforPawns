@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Defs>
+
+<ThingDef ParentName="BaseHumanMakeableGun">
+    <defName>BrrtGunPawn</defName>
+    <label>ultra-heavy autocannon</label>
+    <description>What if you combined seven uranium slug turrets into a minigun?</description>
+    <graphicData>
+		<texPath>Brrt_Top</texPath>
+		<graphicClass>Graphic_Single</graphicClass>
+		<drawSize>3</drawSize>
+    </graphicData>
+    <soundInteract>Interact_Rifle</soundInteract>
+    <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
+    <weaponClasses>
+		<li>RangedHeavy</li>
+    </weaponClasses>
+    <statBases>
+		<WorkToMake>65000</WorkToMake>
+		<Mass>100</Mass>
+      <AccuracyTouch>0.20</AccuracyTouch>
+      <AccuracyShort>0.30</AccuracyShort>
+      <AccuracyMedium>0.40</AccuracyMedium>
+      <AccuracyLong>0.95</AccuracyLong>
+		<RangedWeapon_Cooldown>2.5</RangedWeapon_Cooldown>
+    </statBases>
+    <costList>
+		<Steel>2260</Steel>
+		<Plasteel>210</Plasteel>
+		<Uranium>420</Uranium>
+		<ComponentIndustrial>10</ComponentIndustrial>
+		<ComponentSpacer>10</ComponentSpacer>
+    </costList>
+    <recipeMaker>
+		<researchPrerequisites>
+	      <li>SniperTurret</li>
+			<li>MultibarrelWeapons</li>
+		</researchPrerequisites>
+		<skillRequirements>
+			<Crafting>15</Crafting>
+		</skillRequirements>
+		<recipeUsers>
+			<li>FabricationBench</li>
+		</recipeUsers>
+    </recipeMaker>
+    <techLevel>Spacer</techLevel>
+    <weaponTags>
+		<li>GunHeavy</li>
+    </weaponTags>
+    <equippedStatOffsets>
+		<MoveSpeed>-2.0</MoveSpeed>
+    </equippedStatOffsets>
+    <verbs>
+		<li>
+			<verbClass>Verb_Shoot</verbClass>
+			<hasStandardCommand>true</hasStandardCommand>
+			<defaultProjectile>gauBullet</defaultProjectile>
+			<warmupTime>2.5</warmupTime>
+			<minRange>11.9</minRange>
+			<range>45.9</range>
+			<burstShotCount>120</burstShotCount>
+			<ticksBetweenBurstShots>1</ticksBetweenBurstShots>
+			<soundCast>gau-8m</soundCast>
+			<soundCastTail>GunTail_Medium</soundCastTail>
+			<muzzleFlashScale>10</muzzleFlashScale>
+		</li>
+    </verbs>
+    <tools>
+		<li>
+			<label>barrels</label>
+			<capacities>
+			<li>Blunt</li>
+			</capacities>
+			<power>11.7</power>
+			<cooldownTime>2.6</cooldownTime>
+		</li>
+    </tools>
+</ThingDef>
+
+
+  
+  <ThingDef ParentName="BaseBullet">
+    <defName>gauBullet</defName>
+    <label>ultra-heavy autocannon bullets</label>
+    <graphicData>
+      <texPath>Bullet_DU_blur</texPath>
+      <graphicClass>Graphic_Single</graphicClass>
+      <drawSize>2</drawSize>
+    </graphicData>
+    <projectile>
+      <damageDef>Bullet</damageDef>
+      <damageAmountBase>50</damageAmountBase>
+      <speed>120</speed>
+    </projectile>
+  </ThingDef>
+
+    <SoundDef>
+    <defName>gau-8m</defName>  
+    <context>MapOnly</context>  
+	 <maxVoices>4</maxVoices>   
+    <maxSimultaneous>1</maxSimultaneous>  
+    <subSounds>
+      <li>
+        <grains>
+          <li Class="AudioGrain_Folder">
+            <clipFolderPath>gau-8 ultra short</clipFolderPath>
+          </li>
+        </grains>      
+		<sustainLoop>false</sustainLoop>
+      </li>
+    </subSounds>
+  </SoundDef>
+ </Defs>
