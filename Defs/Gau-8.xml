@@ -6,7 +6,7 @@
     <label>ultra-heavy autocannon</label>
     <description>What if you combined seven uranium slug turrets into a minigun?</description>
     <graphicData>
-		<texPath>Brrt_Top</texPath>
+		<texPath>BrrtGun</texPath>
 		<graphicClass>Graphic_Single</graphicClass>
 		<drawSize>3</drawSize>
     </graphicData>
