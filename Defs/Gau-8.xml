@@ -5,10 +5,15 @@
     <defName>BrrtGunPawn</defName>
     <label>ultra-heavy autocannon</label>
     <description>What if you combined seven uranium slug turrets into a minigun?</description>
+	
     <graphicData>
 		<texPath>BrrtGun</texPath>
 		<graphicClass>Graphic_Single</graphicClass>
-		<drawSize>3</drawSize>
+			<drawSize>3</drawSize>
+			<drawOffsetNorth>(1, 0.0, -.75)</drawOffsetNorth>
+			<drawOffsetSouth>(0, 0.0, -.5)</drawOffsetSouth>
+			<drawOffsetEast>(0, 0.0, -.5)</drawOffsetEast>
+			<drawOffsetWest>(0, 0.0,-.5)</drawOffsetWest>
     </graphicData>
     <soundInteract>Interact_Rifle</soundInteract>
     <thingSetMakerTags><li>RewardStandardQualitySuper</li></thingSetMakerTags>
@@ -79,7 +84,6 @@
 		<li Class="WeaponEquipment.WeaponEquipmentOptions">
 			<apparelToWearAfterEquipping>BrrtBackpack</apparelToWearAfterEquipping>
 			<apparelToDestroyAfterDropping>BrrtBackpack</apparelToDestroyAfterDropping>
-			<stuffForApparel>Cloth</stuffForApparel>
 		</li>
 	</modExtensions>
 </ThingDef>
@@ -120,20 +124,22 @@
   
   <ThingDef ParentName="ApparelBase">
     <defName>BrrtBackpack</defName>
-    <label>Backpack</label>
-    <description>A backpack to make carry things more convinient.</description>
+    <label>Ammo pack</label>
+    <description>A backpack to carry ammo.</description>
     <graphicData>
       <texPath>Backpack</texPath>
       <graphicClass>Graphic_Single</graphicClass>
+	  <drawOffsetNorth>(0, 1.0, 0.25)</drawOffsetNorth>
+	  <drawOffsetSouth>(0, -2, 0.25)</drawOffsetSouth>
+	  <drawOffsetEast>(-0.5, 0, 0.5)</drawOffsetEast>
+	  <drawOffsetWest>(0.5, 0, 0.5)</drawOffsetWest>
     </graphicData>
-    <colorGenerator Class="ColorGenerator_Options">
-      <options>
-        <li>
-          <weight>6</weight>
-          <only>RGBA(0.2,0.2,0.2,1)</only>
-        </li>
-      </options>
-    </colorGenerator>
+	<modExtensions>
+		<li Class="OversizedApparel.Extension">
+			<drawSize>1.2</drawSize>
+			
+		</li>
+	</modExtensions>
     <statBases>
       <Insulation_Cold>2</Insulation_Cold>
       <MaxHitPoints>120</MaxHitPoints>
@@ -146,10 +152,6 @@
     </equippedStatOffsets>
     <costStuffCount>40</costStuffCount>
     <techLevel>Industrial</techLevel>
-    <stuffCategories>
-      <li>Fabric</li>
-      <li>Leathery</li>
-    </stuffCategories>
     <thingCategories>
       <li>Apparel</li>
     </thingCategories>
@@ -180,10 +182,6 @@
       <effectWorking>Tailor</effectWorking>
       <soundWorking>Recipe_Tailor</soundWorking>
       <unfinishedThingDef>UnfinishedMetallicTechArmor</unfinishedThingDef>
-      <recipeUsers>
-        <li>ElectricTailoringBench</li>
-        <li>HandTailoringBench</li>
-      </recipeUsers>
     </recipeMaker>
   </ThingDef>
 
