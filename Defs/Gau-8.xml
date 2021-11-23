@@ -84,6 +84,12 @@
 		<li Class="WeaponEquipment.WeaponEquipmentOptions">
 			<apparelToWearAfterEquipping>BrrtBackpack</apparelToWearAfterEquipping>
 			<apparelToDestroyAfterDropping>BrrtBackpack</apparelToDestroyAfterDropping>
+		</li>	
+		<li Class="HeavyWeapons.HeavyWeapon">
+			<isHeavy>true</isHeavy>
+			<supportedArmors>
+				<li>VWE_Apparel_Exoframe</li>
+			</supportedArmors>
 		</li>
 	</modExtensions>
 </ThingDef>
